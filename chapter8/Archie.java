@@ -1,21 +1,19 @@
 import java.util.regex.*;
-class Regex2 {
+public class Archie {
 	public static void main(String[] args) {
 		Pattern p = Pattern.compile(args[0]);
 		Matcher m = p.matcher(args[1]);
-		boolean b = false;
-		while(b = m.find()) {
-			System.out.print(m.start() + m.group());
-		}
+		int count = 0;
+		while(m.find())
+			count++;
+		System.out.print(count);
 	}
 }
 
 /*
 
-
-jaykrishnanc@jaya-Satellite-C655D:~/javapgms/Java/chapter8$ java Regex2 "\d*" ab34ef
+jaykrishnanc@jaya-Satellite-C655D:~/javapgms/Java/chapter8$ java Archie "\d+" ab2c4d67
 Picked up JAVA_TOOL_OPTIONS: -javaagent:/usr/share/java/jayatanaag.jar 
-
-01234456
+3
 
 */
